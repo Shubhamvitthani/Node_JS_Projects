@@ -1,0 +1,173 @@
+<%- include('../header') %>
+
+<style>
+    body {
+        background: #f4f5f7;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .page-wrapper {
+        padding: 40px 0;
+        min-height: 100vh;
+    }
+
+    .page-title {
+        font-weight: 700;
+        color: #1f2937;
+        letter-spacing: 0.5px;
+    }
+
+    .breadcrumb {
+        background: transparent;
+    }
+
+    .breadcrumb-item a {
+        color: #6b7280;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .breadcrumb-item.active {
+        color: #111827;
+        font-weight: 600;
+    }
+
+    /* Card styling */
+    .card {
+        border: none;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        background-color: #f9fafb;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .card-body {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+
+    /* Buttons - icon only */
+    .btn-group {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .btn-group .btn {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        transition: none; /* no hover effect */
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .btn-read {
+        background-color: #374151; /* dark gray */
+    }
+
+    .btn-edit {
+        background-color: #059669; /* green */
+    }
+
+    .btn-delete {
+        background-color: #dc2626; /* red */
+    }
+
+    .btn-read:hover,
+    .btn-edit:hover,
+    .btn-delete:hover {
+        background-color: inherit;
+        opacity: 1; /* no hover effect */
+    }
+
+    .text-muted {
+        font-weight: 500;
+        color: #6b7280 !important;
+        margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+        .card img {
+            height: 200px;
+        }
+    }
+</style>
+
+<div class="page-wrapper">
+    <div class="page-breadcrumb mb-4">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center justify-content-between">
+                <h4 class="page-title">🛍️ Products</h4>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Products</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <% products.map((v, i) => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="/uploads/productsimages/<%= v.image %>" alt="Product Image">
+                    <div class="card-body">
+                        <div>
+                            <h5 class="card-title"><%= v.title %></h5>
+                            <p class="card-text">
+                                <strong>Description:</strong> <%= v.description.substring(0, 50) %>...
+                                <br>
+                                <strong>Price:</strong> ₹ <%= v.price %> <br>
+                                <strong>Quantity:</strong> <%= v.quantity %>
+                            </p>
+                        </div>
+                        <div class="btn-group ">
+                            <a href="/product/<%= v._id %>" class="btn bg-dark">🔍</a>
+                            <a href="/product/edit/<%= v._id %>" class="btn bg-dark">✏️</a>
+                            <a href="/product/delete/<%= v._id %>" class="btn btn-dark">🗑️</a>
+                        </div>
+                        <small class="text-muted">#<%= i + 1 %></small>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%- include('../footer') %>

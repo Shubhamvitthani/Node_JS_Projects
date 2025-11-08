@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "690f1f3f737bd9692e0a2b4a"
+  },
+  "title": "My First Article",
+  "content": "test content",
+  "author": {
+    "$oid": "690f189815182cfdffe4c601"
+  },
+  "createdAt": {
+    "$date": "2025-11-08T10:45:19.780Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "690f188215182cfdffe4c5ff"
+  },
+  "username": "raj",
+  "email": "raj@test.in",
+  "password": "$2b$10$qzrua/i8.mYr9FomYQcDluFCLfXSfje/cNYIMjVz3mMChtLnO16nu",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690f189815182cfdffe4c601"
+  },
+  "username": "john",
+  "email": "john@test.in",
+  "password": "$2b$10$KgF.FnLTOpcisSmmr04YquqBkxw3q1nv3o2mQxvo5O1bSAI2PAH36",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690f18a315182cfdffe4c603"
+  },
+  "username": "smit",
+  "email": "smit@test.in",
+  "password": "$2b$10$X3VjxG5VDdK2g4baDuh6tO3NgrqhlYKNdizhhJrgqnQh6JH5qNBLO",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "690f18c015182cfdffe4c605"
+  },
+  "username": "shubham",
+  "email": "shubham@test.in",
+  "password": "$2b$10$SuT0yDVBGH47fIksDEoBPexAzdrToc.8IQGQiSllubWxuJW/X1cr.",
+  "role": "admin",
+  "__v": 0
+}]
